@@ -5,237 +5,133 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Regalitos Pamela | El Arte de Pame</title>
     
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&family=Great+Vibes&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,400;1,400&family=Poppins:wght@300;400;600&family=Great+Vibes&display=swap" rel="stylesheet">
     
     <style>
-        /* --- VARIABLES DE COLOR --- */
+        /* --- VARIABLES --- */
         :root {
-            --primary: #d63384;   /* Rosa fuerte (Tu marca) */
-            --secondary: #6f42c1; /* Morado elegante */
-            --light-pink: rgba(214, 51, 132, 0.1); /* Rosa transparente para botones */
+            --primary: #d63384;   
+            --secondary: #6f42c1; 
+            --light-pink: rgba(214, 51, 132, 0.1); 
+            --bg-color: #fdf0f0;  
+            --tagline-color: #3a3a3a; 
             --dark: #343a40;
             --text: #555;
             --white: #ffffff;
         }
 
-        /* --- RESET BÁSICO --- */
+        /* --- BASIC --- */
         * { margin: 0; padding: 0; box-sizing: border-box; }
-        body { font-family: 'Poppins', sans-serif; background-color: #fffafc; color: var(--text); }
+        body { font-family: 'Poppins', sans-serif; background-color: var(--bg-color); color: var(--text); }
         a { text-decoration: none; }
         html { scroll-behavior: smooth; }
 
-        /* --- HEADER (ENCABEZADO) --- */
+        /* --- HEADER --- */
         header {
             background: var(--white);
-            box-shadow: 0 4px 12px rgba(0,0,0,0.05); /* Sombra suave */
-            padding: 5px 5%; /* Compacto verticalmente */
+            box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+            padding: 5px 5%;
             position: sticky;
             top: 0;
             z-index: 1000;
             display: flex;
             justify-content: space-between;
             align-items: center;
-            transition: all 0.3s ease;
         }
 
-        /* LADO IZQUIERDO: Logo + Texto */
         .logo-container {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            line-height: 1;
+            display: flex; flex-direction: column; align-items: center; justify-content: center; line-height: 1.2;
         }
-
-        .logo-img {
-            height: 120px; /* Tamaño ideal */
-            width: auto;
-            display: block;
-            transition: transform 0.3s ease;
-        }
+        .logo-img { height: 120px; width: auto; display: block; margin-bottom: 2px; transition: transform 0.3s ease; }
         .logo-img:hover { transform: scale(1.05); }
 
         .logo-subtitle {
-            font-family: 'Great Vibes', cursive;
-            font-size: 1.8rem;
-            color: var(--primary);
-            text-shadow: 1px 1px 1px rgba(0,0,0,0.1);
-            margin-top: -5px; /* Acerca el texto al logo */
+            font-family: 'Montserrat', sans-serif; font-style: italic; font-size: 1rem;
+            color: var(--tagline-color); text-transform: none; letter-spacing: 0.5px;
+            font-weight: 400; margin-top: 5px; text-align: center;
         }
 
-        /* LADO DERECHO: Menú + Redes */
-        .header-right {
-            display: flex;
-            align-items: center;
-            gap: 30px; /* Separación entre menú y redes */
-        }
-
-        /* Navegación (Botones suaves) */
+        .header-right { display: flex; align-items: center; gap: 30px; }
         .nav-links a {
-            padding: 10px 20px;
-            border-radius: 50px;
-            color: var(--dark);
-            font-weight: 600;
-            font-size: 0.95rem;
-            transition: all 0.3s ease;
-            background-color: transparent;
+            padding: 10px 20px; border-radius: 50px; color: var(--dark);
+            font-weight: 600; font-size: 0.95rem; transition: all 0.3s ease; background-color: transparent;
         }
-        
-        .nav-links a:hover {
-            background-color: var(--light-pink);
-            color: var(--primary);
-            transform: translateY(-2px);
-        }
+        .nav-links a:hover { background-color: var(--light-pink); color: var(--primary); transform: translateY(-2px); }
 
-        /* Redes Sociales (Botones Circulares) */
-        .social-icons {
-            display: flex;
-            gap: 10px;
-        }
-
+        .social-icons { display: flex; gap: 10px; }
         .social-icon {
-            width: 35px;
-            height: 35px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            border-radius: 50%;
-            background-color: var(--light-pink);
-            color: var(--primary);
-            font-weight: bold;
-            font-size: 1rem;
-            transition: all 0.3s ease;
+            width: 35px; height: 35px; display: flex; align-items: center; justify-content: center;
+            border-radius: 50%; background-color: var(--light-pink); color: var(--primary);
+            font-weight: bold; font-size: 1rem; transition: all 0.3s ease;
         }
+        .social-icon:hover { background-color: var(--primary); color: white; transform: translateY(-3px); }
 
-        .social-icon:hover {
-            background-color: var(--primary);
-            color: white;
-            transform: translateY(-3px);
-        }
-
-        /* --- HERO SECTION (PORTADA) --- */
+        /* --- HERO --- */
         .hero {
-            /* IMPORTANTE: Cambia 'img/fondo.jpg' por tu foto de paisaje o árboles */
-            background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url('img/fondo_arboles.jpg');
-            background-size: cover;
-            background-position: center;
-            height: 60vh;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            text-align: center;
-            color: white;
-            padding: 0 20px;
+            background: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('img/fondo_arboles.jpg');
+            background-size: cover; background-position: center; height: 60vh;
+            display: flex; flex-direction: column; justify-content: center; align-items: center;
+            text-align: center; color: white; padding: 0 20px;
         }
-
-        .hero h1 { font-size: 3rem; margin-bottom: 10px; text-shadow: 2px 2px 4px rgba(0,0,0,0.6); }
-        .hero p { font-size: 1.3rem; margin-bottom: 25px; text-shadow: 1px 1px 2px rgba(0,0,0,0.6); }
-
+        .hero h1 { font-family: 'Great Vibes', cursive; font-size: 3.5rem; margin-bottom: 5px; text-shadow: 2px 2px 4px rgba(0,0,0,0.6); }
+        .hero p { font-size: 1.2rem; margin-bottom: 25px; text-shadow: 1px 1px 2px rgba(0,0,0,0.6); font-weight: 300; }
         .btn {
-            background: var(--primary);
-            color: white;
-            padding: 12px 35px;
-            border-radius: 50px;
-            font-weight: 600;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            box-shadow: 0 4px 15px rgba(214, 51, 132, 0.4);
-            transition: 0.3s;
+            background: var(--primary); color: white; padding: 12px 35px; border-radius: 50px;
+            font-weight: 600; text-transform: uppercase; letter-spacing: 1px;
+            box-shadow: 0 4px 15px rgba(214, 51, 132, 0.4); transition: 0.3s;
         }
         .btn:hover { background: var(--secondary); transform: translateY(-3px); }
 
-        /* --- CATÁLOGO --- */
+        /* --- CATÁLOGO ORGANIZADO --- */
         .container { max-width: 1200px; margin: 60px auto; padding: 0 20px; }
         
-        .section-title { text-align: center; margin-bottom: 50px; }
-        .section-title span { color: var(--primary); font-family: 'Great Vibes', cursive; font-size: 2.5rem; display: block; }
-        .section-title h2 { color: var(--dark); font-size: 2rem; margin-top: -10px; }
+        .section-header { text-align: center; margin-bottom: 40px; margin-top: 60px; }
+        .section-header span { color: var(--primary); font-family: 'Great Vibes', cursive; font-size: 2.5rem; display: block; }
+        .section-header h2 { color: var(--dark); font-size: 1.8rem; margin-top: -5px; border-bottom: 2px solid var(--light-pink); display: inline-block; padding-bottom: 10px; }
 
-        .grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 30px;
-        }
+        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 30px; }
 
         .card {
-            background: white;
-            border-radius: 20px;
-            overflow: hidden;
-            box-shadow: 0 10px 25px rgba(0,0,0,0.05);
-            transition: 0.3s;
-            border: 1px solid #f0f0f0;
-            display: flex;
-            flex-direction: column;
+            background: white; border-radius: 20px; overflow: hidden;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.05); transition: 0.3s; border: 1px solid #eee;
+            display: flex; flex-direction: column;
         }
         .card:hover { transform: translateY(-10px); box-shadow: 0 15px 35px rgba(0,0,0,0.1); }
-
-        .card-img {
-            height: 280px;
-            width: 100%;
-            object-fit: cover;
-        }
-
+        .card-img { height: 300px; width: 100%; object-fit: cover; }
         .card-body { padding: 25px; text-align: center; flex-grow: 1; display: flex; flex-direction: column; justify-content: space-between;}
         .card-title { font-size: 1.2rem; color: var(--dark); margin: 10px 0; font-weight: 700; }
-        .tag { font-size: 0.75rem; background: var(--light-pink); padding: 5px 12px; border-radius: 20px; color: var(--primary); display: inline-block; font-weight: 600; }
-        
-        .card-price { 
-            display: block; 
-            color: var(--primary); 
-            font-size: 1.4rem; 
-            font-weight: 800; 
-            margin: 15px 0; 
-        }
+        .tag { font-size: 0.75rem; background: var(--bg-color); padding: 5px 12px; border-radius: 20px; color: var(--secondary); display: inline-block; font-weight: 600; }
+        .card-price { display: block; color: var(--primary); font-size: 1.4rem; font-weight: 800; margin: 15px 0; }
         .card-price small { font-size: 0.8rem; color: #888; font-weight: normal; }
 
         .btn-whatsapp {
-            background-color: #25D366;
-            color: white;
-            display: block;
-            width: 100%;
-            padding: 12px;
-            border-radius: 10px;
-            font-weight: 600;
-            transition: 0.3s;
+            background-color: #25D366; color: white; display: block; width: 100%;
+            padding: 12px; border-radius: 10px; font-weight: 600; transition: 0.3s;
         }
         .btn-whatsapp:hover { background-color: #128C7E; }
 
-        /* --- NOSOTROS --- */
+        /* --- NOSOTROS & FOOTER --- */
         .about { background: white; padding: 80px 20px; text-align: center; margin-top: 80px; border-top: 1px solid #eee; }
         .features { display: flex; justify-content: center; gap: 50px; flex-wrap: wrap; margin-top: 40px; }
         .feature-item { max-width: 250px; }
-        .feature-icon { font-size: 2.5rem; margin-bottom: 15px; display: block; filter: drop-shadow(2px 2px 0px rgba(0,0,0,0.1)); }
-
-        /* --- FOOTER --- */
+        .feature-icon { font-size: 2.5rem; margin-bottom: 15px; display: block; }
         footer { background: var(--dark); color: white; text-align: center; padding: 40px 20px; margin-top: 0; }
-        
-        /* --- BOTÓN FLOTANTE --- */
         .float-wa {
-            position: fixed;
-            width: 60px; height: 60px;
-            bottom: 30px; right: 30px;
-            background-color: #25d366;
-            color: #FFF;
-            border-radius: 50px;
-            text-align: center;
-            display: flex; align-items: center; justify-content: center;
-            font-size: 30px;
-            box-shadow: 2px 2px 10px rgba(0,0,0,0.3);
-            z-index: 100;
-            transition: transform 0.3s;
+            position: fixed; width: 60px; height: 60px; bottom: 30px; right: 30px;
+            background-color: #25d366; color: #FFF; border-radius: 50px; text-align: center;
+            display: flex; align-items: center; justify-content: center; font-size: 30px;
+            box-shadow: 2px 2px 10px rgba(0,0,0,0.3); z-index: 100; transition: transform 0.3s;
         }
         .float-wa:hover { transform: scale(1.1); }
 
-        /* --- RESPONSIVE (CELULARES) --- */
+        /* --- RESPONSIVE --- */
         @media (max-width: 768px) {
-            header { flex-direction: column; gap: 15px; padding: 15px; }
+            header { flex-direction: column; gap: 15px; padding: 15px 5%; }
             .header-right { flex-direction: column; gap: 20px; width: 100%; }
             .nav-links { display: flex; flex-wrap: wrap; justify-content: center; gap: 5px; }
             .logo-img { height: 100px; }
-            .logo-subtitle { font-size: 1.5rem; }
-            .hero h1 { font-size: 2rem; }
-            .grid { grid-template-columns: 1fr; } /* 1 columna en celular */
+            .hero h1 { font-size: 2.5rem; }
+            .grid { grid-template-columns: 1fr; }
         }
     </style>
 </head>
@@ -243,19 +139,17 @@
 
     <header>
         <div class="logo-container">
-            <img src="img/logo.jpg" alt="Logo Regalitos Pamela" class="logo-img">
-            <span class="logo-subtitle">El Arte de Pame</span>
+            <img src="img/logo.png" alt="Logo Regalitos Pamela" class="logo-img">
+            <span class="logo-subtitle">Detalles únicos para ti</span>
         </div>
-        
         <div class="header-right">
             <nav class="nav-links">
                 <a href="#catalogo">Catálogo</a>
                 <a href="#nosotros">Nosotros</a>
                 <a href="#contacto">Contacto</a>
             </nav>
-            
             <div class="social-icons">
-                <a href="https://www.facebook.com/pame23linda" class="social-icon" title="Facebook">f</a>
+                <a href="#" class="social-icon" title="Facebook">f</a>
                 <a href="#" class="social-icon" title="Instagram">i</a>
                 <a href="https://wa.me/51984835283" class="social-icon" title="WhatsApp">w</a>
             </div>
@@ -263,118 +157,146 @@
     </header>
 
     <section class="hero">
-        <h1>Arte que Ilumina tu Hogar</h1>
-        <p>Cuadros de "Diamond Painting" hechos a mano con amor en Sicuani.</p>
-        <a href="#catalogo" class="btn">Ver Colección</a>
+        <h1>Arte que Ilumina</h1>
+        <p>Cuadros, Tarjetas y Dibujos hechos a mano en Sicuani.</p>
+        <a href="#catalogo" class="btn">Ver Catálogo</a>
     </section>
 
     <section class="container" id="catalogo">
-        <div class="section-title">
-            <span>Nuestras Creaciones</span>
-            <h2>Catálogo Disponible</h2>
+        
+        <div class="section-header">
+            <span>Brillo y Color</span>
+            <h2>Pintura de Diamante</h2>
         </div>
 
         <div class="grid">
             <div class="card">
-                <img src="img/Guadalupe.jpg" alt="Virgen de Guadalupe" class="card-img">
+                <img src="img/virgen_guadalupe.jpg" alt="Virgen" class="card-img">
                 <div class="card-body">
-                    <div>
-                        <span class="tag">Fe y Devoción</span>
-                        <h3 class="card-title">Virgen de Guadalupe</h3>
-                        <p>Brillo espectacular con cobertura completa.</p>
-                    </div>
-                    <div>
-                        <span class="card-price">S/. 95.00 <small>(con marco)</small></span>
-                        <a href="https://wa.me/51984835283?text=Hola,%20me%20interesa%20la%20*Virgen%20de%20Guadalupe*" class="btn-whatsapp" target="_blank">Pedir ahora</a>
-                    </div>
+                    <span class="tag">Fe y Devoción</span>
+                    <h3 class="card-title">Virgen de Guadalupe</h3>
+                    <span class="card-price">S/. 95.00 <small>(con marco)</small></span>
+                    <a href="https://wa.me/51984835283?text=Hola,%20me%20interesa%20la%20Virgen" class="btn-whatsapp" target="_blank">Pedir</a>
                 </div>
             </div>
-
             <div class="card">
-                <img src="img/arbol1.jpeg" alt="Árboles de la Vida" class="card-img">
+                <img src="img/arboles_duo.jpg" alt="Arboles" class="card-img">
                 <div class="card-body">
-                    <div>
-                        <span class="tag">Energía y Prosperidad</span>
-                        <h3 class="card-title">Dúo Árboles (Azul y Dorado)</h3>
-                        <p>El equilibrio perfecto entre sueños y abundancia.</p>
-                    </div>
-                    <div>
-                        <span class="card-price">S/. 90.00 <small>(Oferta Dúo)</small></span>
-                        <a href="https://wa.me/51984835283?text=Hola,%20me%20interesa%20el%20*Dúo%20de%20Árboles*" class="btn-whatsapp" target="_blank">Pedir ahora</a>
-                    </div>
+                    <span class="tag">Decoración</span>
+                    <h3 class="card-title">Dúo Árboles Vida</h3>
+                    <span class="card-price">S/. 90.00 <small>(El par)</small></span>
+                    <a href="https://wa.me/51984835283?text=Hola,%20me%20interesan%20los%20Arboles" class="btn-whatsapp" target="_blank">Pedir</a>
                 </div>
             </div>
-
             <div class="card">
-                <img src="img/geisha.jpg" alt="Geisha Oriental" class="card-img">
+                <img src="img/geisha.jpg" alt="Geisha" class="card-img">
                 <div class="card-body">
-                    <div>
-                        <span class="tag">Lujo Exclusivo</span>
-                        <h3 class="card-title">Geisha con Perlas</h3>
-                        <p>Incrustaciones especiales y piedras brillantes.</p>
-                    </div>
-                    <div>
-                        <span class="card-price">S/. 60.00 <small>(sin marco)</small></span>
-                        <a href="https://wa.me/51984835283?text=Hola,%20me%20interesa%20la%20*Geisha%20Oriental*" class="btn-whatsapp" target="_blank">Pedir ahora</a>
-                    </div>
-                </div>
-            </div>
-
-             <div class="card">
-                <img src="img/NiñosVintage.jpg" alt="Amigas Gorjuss" class="card-img">
-                <div class="card-body">
-                    <div>
-                        <span class="tag">Infantil y Tierno</span>
-                        <h3 class="card-title">Amigas bajo la Lluvia</h3>
-                        <p>Detalle increíble para decoración juvenil.</p>
-                    </div>
-                    <div>
-                        <span class="card-price">S/. 120.00 <small>(Gran Tamaño)</small></span>
-                        <a href="https://wa.me/51984835283?text=Hola,%20me%20interesa%20el%20cuadro%20*Amigas%20Bajo%20Lluvia*" class="btn-whatsapp" target="_blank">Pedir ahora</a>
-                    </div>
+                    <span class="tag">Lujo Exclusivo</span>
+                    <h3 class="card-title">Geisha Oriental</h3>
+                    <span class="card-price">S/. 60.00 <small>(sin marco)</small></span>
+                    <a href="https://wa.me/51984835283?text=Hola,%20me%20interesa%20la%20Geisha" class="btn-whatsapp" target="_blank">Pedir</a>
                 </div>
             </div>
         </div>
+
+
+        <div class="section-header">
+            <span>Papelería Creativa</span>
+            <h2>Tarjetas Hechas a Mano</h2>
+        </div>
+
+        <div class="grid">
+            <div class="card">
+                <img src="img/tarjeta_cumple.jpg" alt="Tarjeta Cumpleaños" class="card-img">
+                <div class="card-body">
+                    <span class="tag">Cumpleaños</span>
+                    <h3 class="card-title">Tarjeta "Felicidades"</h3>
+                    <p>Diseño único con relieve y detalles 3D.</p>
+                    <span class="card-price">S/. 15.00</span>
+                    <a href="https://wa.me/51984835283?text=Hola,%20quiero%20una%20tarjeta%20de%20cumpleaños" class="btn-whatsapp" target="_blank">Pedir</a>
+                </div>
+            </div>
+
+            <div class="card">
+                <img src="img/tarjeta_amor.jpg" alt="Tarjeta Amor" class="card-img">
+                <div class="card-body">
+                    <span class="tag">Amor y Amistad</span>
+                    <h3 class="card-title">Tarjeta Corazones</h3>
+                    <p>Perfecta para aniversarios o fechas especiales.</p>
+                    <span class="card-price">S/. 12.00</span>
+                    <a href="https://wa.me/51984835283?text=Hola,%20quiero%20una%20tarjeta%20de%20amor" class="btn-whatsapp" target="_blank">Pedir</a>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="section-header">
+            <span>Trazos con Alma</span>
+            <h2>Dibujos Hechos a Mano</h2>
+        </div>
+
+        <div class="grid">
+            <div class="card">
+                <img src="img/dibujo_retrato.jpg" alt="Dibujo a Lápiz" class="card-img">
+                <div class="card-body">
+                    <span class="tag">Arte a Lápiz</span>
+                    <h3 class="card-title">Retratos Personalizados</h3>
+                    <p>Inmortaliza un recuerdo con un dibujo a mano.</p>
+                    <span class="card-price">Desde S/. 40.00</span>
+                    <a href="https://wa.me/51984835283?text=Hola,%20quisiera%20cotizar%20un%20retrato%20a%20mano" class="btn-whatsapp" target="_blank">Cotizar</a>
+                </div>
+            </div>
+
+            <div class="card">
+                <img src="img/dibujo_paisaje.jpg" alt="Dibujo Paisaje" class="card-img">
+                <div class="card-body">
+                    <span class="tag">Carboncillo / Color</span>
+                    <h3 class="card-title">Arte Decorativo</h3>
+                    <p>Dibujos originales listos para enmarcar.</p>
+                    <span class="card-price">S/. 30.00</span>
+                    <a href="https://wa.me/51984835283?text=Hola,%20me%20interesan%20tus%20dibujos" class="btn-whatsapp" target="_blank">Pedir</a>
+                </div>
+            </div>
+        </div>
+
     </section>
 
     <section class="about" id="nosotros">
         <div class="container">
-            <div class="section-title">
+            <div class="section-header">
                 <span>¿Por qué elegirnos?</span>
                 <h2>Hecho a Mano en Sicuani</h2>
             </div>
             <div class="features">
                 <div class="feature-item">
                     <span class="feature-icon">💎</span>
-                    <h4>Brillo Único</h4>
-                    <p>Cristales de alta calidad para un acabado que deslumbra.</p>
+                    <h4>Detalle Único</h4>
+                    <p>Cada pieza es elaborada con paciencia y dedicación.</p>
                 </div>
                 <div class="feature-item">
-                    <span class="feature-icon">🎁</span>
-                    <h4>El Regalo Ideal</h4>
-                    <p>Detalles únicos para cumpleaños, bautizos y decoración.</p>
+                    <span class="feature-icon">🎨</span>
+                    <h4>Variedad Artística</h4>
+                    <p>Desde el brillo del diamante hasta el trazo del lápiz.</p>
                 </div>
                 <div class="feature-item">
                     <span class="feature-icon">🚚</span>
                     <h4>Entrega Local</h4>
-                    <p>Entregas personales y seguras en Sicuani y Cusco.</p>
+                    <p>Entregas seguras y personales en Sicuani.</p>
                 </div>
             </div>
         </div>
     </section>
 
     <footer id="contacto">
-        <p style="font-family: 'Great Vibes', cursive; font-size: 1.5rem; margin-bottom: 10px;">Regalitos Pamela</p>
-        <p>&copy; 2025 Todos los derechos reservados.</p>
-        <p>Sicuani, Cusco - Perú</p>
+        <p style="font-family: 'Great Vibes', cursive; font-size: 2rem; margin-bottom: 10px;">Regalitos Pamela</p>
+        <p>&copy; 2025 Todos los derechos reservados. Sicuani, Cusco.</p>
     </footer>
 
-    <a href="https://wa.me/51984835283" class="float-wa" target="_blank" title="Escríbenos">
+    <a href="https://wa.me/51984835283" class="float-wa" target="_blank">
         <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" viewBox="0 0 16 16">
             <path d="M13.601 2.326A7.854 7.854 0 0 0 7.994 0C3.627 0 .068 3.558.064 7.926c0 1.399.366 2.76 1.057 3.965L0 16l4.204-1.102a7.933 7.933 0 0 0 3.79.965h.004c4.368 0 7.926-3.558 7.93-7.93A7.898 7.898 0 0 0 13.6 2.326zM7.994 14.521a6.573 6.573 0 0 1-3.356-.92l-.24-.144-2.494.654.666-2.433-.156-.251a6.56 6.56 0 0 1-1.007-3.505c0-3.626 2.957-6.584 6.591-6.584a6.56 6.56 0 0 1 4.66 1.931 6.557 6.557 0 0 1 1.928 4.66c-.004 3.639-2.961 6.592-6.592 6.592z"/>
         </svg>
     </a>
 
 </body>
-
 </html>
