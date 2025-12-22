@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Regalitos Pamela | El Arte de Pame</title>
     
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,400;1,400&family=Poppins:wght@300;400;600&family=Great+Vibes&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,400;1,400&family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
     
     <style>
         /* --- VARIABLES --- */
@@ -66,15 +66,25 @@
         }
         .social-icon:hover { background-color: var(--primary); color: white; transform: translateY(-3px); }
 
-        /* --- HERO --- */
+        /* --- HERO (PORTADA) --- */
         .hero {
             background: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('img/fondo_arboles.jpg');
             background-size: cover; background-position: center; height: 60vh;
             display: flex; flex-direction: column; justify-content: center; align-items: center;
             text-align: center; color: white; padding: 0 20px;
         }
-        .hero h1 { font-family: 'Great Vibes', cursive; font-size: 3.5rem; margin-bottom: 5px; text-shadow: 2px 2px 4px rgba(0,0,0,0.6); }
-        .hero p { font-size: 1.2rem; margin-bottom: 25px; text-shadow: 1px 1px 2px rgba(0,0,0,0.6); font-weight: 300; }
+        
+        /* CAMBIO AQUÍ: Usamos Poppins en negrita en lugar de cursiva */
+        .hero h1 { 
+            font-family: 'Poppins', sans-serif; 
+            font-weight: 700; /* Negrita fuerte */
+            font-size: 3.5rem; 
+            margin-bottom: 10px; 
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.6); 
+        }
+        
+        .hero p { font-size: 1.3rem; margin-bottom: 25px; text-shadow: 1px 1px 2px rgba(0,0,0,0.6); font-weight: 400; }
+        
         .btn {
             background: var(--primary); color: white; padding: 12px 35px; border-radius: 50px;
             font-weight: 600; text-transform: uppercase; letter-spacing: 1px;
@@ -82,12 +92,24 @@
         }
         .btn:hover { background: var(--secondary); transform: translateY(-3px); }
 
-        /* --- CATÁLOGO ORGANIZADO --- */
+        /* --- CATÁLOGO --- */
         .container { max-width: 1200px; margin: 60px auto; padding: 0 20px; }
         
         .section-header { text-align: center; margin-bottom: 40px; margin-top: 60px; }
-        .section-header span { color: var(--primary); font-family: 'Great Vibes', cursive; font-size: 2.5rem; display: block; }
-        .section-header h2 { color: var(--dark); font-size: 1.8rem; margin-top: -5px; border-bottom: 2px solid var(--light-pink); display: inline-block; padding-bottom: 10px; }
+        
+        /* CAMBIO AQUÍ TAMBIÉN: Uniformidad en los subtítulos */
+        .section-header span { 
+            color: var(--primary); 
+            font-family: 'Poppins', sans-serif; /* Ya no es cursiva */
+            font-weight: 600;
+            font-size: 1.2rem; 
+            display: block; 
+            text-transform: uppercase; /* Lo ponemos en mayúsculas para estilo */
+            letter-spacing: 2px;
+            margin-bottom: 5px;
+        }
+        
+        .section-header h2 { color: var(--dark); font-size: 2.2rem; margin-top: 0; font-weight: 700; }
 
         .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 30px; }
 
@@ -115,7 +137,12 @@
         .features { display: flex; justify-content: center; gap: 50px; flex-wrap: wrap; margin-top: 40px; }
         .feature-item { max-width: 250px; }
         .feature-icon { font-size: 2.5rem; margin-bottom: 15px; display: block; }
+        
         footer { background: var(--dark); color: white; text-align: center; padding: 40px 20px; margin-top: 0; }
+        
+        /* Footer con letra normal también */
+        footer p:first-child { font-family: 'Poppins', sans-serif; font-size: 1.5rem; font-weight: 700; margin-bottom: 10px; }
+
         .float-wa {
             position: fixed; width: 60px; height: 60px; bottom: 30px; right: 30px;
             background-color: #25d366; color: #FFF; border-radius: 50px; text-align: center;
@@ -199,7 +226,6 @@
             </div>
         </div>
 
-
         <div class="section-header">
             <span>Papelería Creativa</span>
             <h2>Tarjetas Hechas a Mano</h2>
@@ -216,7 +242,6 @@
                     <a href="https://wa.me/51984835283?text=Hola,%20quiero%20una%20tarjeta%20de%20cumpleaños" class="btn-whatsapp" target="_blank">Pedir</a>
                 </div>
             </div>
-
             <div class="card">
                 <img src="img/tarjeta_amor.jpg" alt="Tarjeta Amor" class="card-img">
                 <div class="card-body">
@@ -228,7 +253,6 @@
                 </div>
             </div>
         </div>
-
 
         <div class="section-header">
             <span>Trazos con Alma</span>
@@ -246,7 +270,6 @@
                     <a href="https://wa.me/51984835283?text=Hola,%20quisiera%20cotizar%20un%20retrato%20a%20mano" class="btn-whatsapp" target="_blank">Cotizar</a>
                 </div>
             </div>
-
             <div class="card">
                 <img src="img/dibujo_paisaje.jpg" alt="Dibujo Paisaje" class="card-img">
                 <div class="card-body">
@@ -288,7 +311,7 @@
     </section>
 
     <footer id="contacto">
-        <p style="font-family: 'Great Vibes', cursive; font-size: 2rem; margin-bottom: 10px;">Regalitos Pamela</p>
+        <p>Regalitos Pamela</p>
         <p>&copy; 2025 Todos los derechos reservados. Sicuani, Cusco.</p>
     </footer>
 
@@ -300,3 +323,4 @@
 
 </body>
 </html>
+
