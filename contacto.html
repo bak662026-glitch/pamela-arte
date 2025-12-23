@@ -3,101 +3,132 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contacto | Regalitos Pamela</title>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,400;1,400&family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <title>Contacto | El Arte de Pame</title>
+    
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
     
     <style>
-        /* --- MISMOS ESTILOS QUE EL INDEX --- */
+        /* --- 1. PALETA DE COLORES (Igual que en el Inicio) --- */
         :root {
-            --primary: #d63384;   
-            --secondary: #6f42c1; 
-            --light-pink: rgba(214, 51, 132, 0.1); 
-            --bg-color: #fdf0f0;  
-            --tagline-color: #3a3a3a; 
-            --dark: #343a40;
-            --text: #555;
+            --bg-color: #FAF7F2;      /* Crema cálido */
+            --primary: #C97C5D;       /* Terracota suave */
+            --accent: #D8A7B1;        /* Rosa empolvado */
+            --text-main: #4A4A4A;     /* Gris oscuro */
+            --text-light: #7A7A7A;    /* Gris medio */
             --white: #ffffff;
         }
 
+        /* --- 2. CONFIGURACIÓN GENERAL --- */
         * { margin: 0; padding: 0; box-sizing: border-box; }
-        body { font-family: 'Poppins', sans-serif; background-color: var(--bg-color); color: var(--text); }
+        
+        body { 
+            font-family: 'Poppins', sans-serif; 
+            background-color: var(--bg-color); 
+            color: var(--text-main); 
+            line-height: 1.6;
+        }
+        
         a { text-decoration: none; }
 
-        /* HEADER IGUAL */
+        /* --- 3. HEADER (Idéntico al Index) --- */
         header {
             background: var(--white);
-            box-shadow: 0 4px 12px rgba(0,0,0,0.05);
-            padding: 5px 5%;
+            box-shadow: 0 2px 15px rgba(0,0,0,0.03);
+            padding: 10px 5%;
             position: sticky; top: 0; z-index: 1000;
             display: flex; justify-content: space-between; align-items: center;
+            height: 90px;
         }
-        .logo-container { display: flex; flex-direction: column; align-items: center; }
-        .logo-img { height: 80px; width: auto; } /* Un poco más chico para esta página */
-        .header-right { display: flex; align-items: center; gap: 30px; }
-        .nav-links a {
-            padding: 10px 20px; border-radius: 50px; color: var(--dark);
-            font-weight: 600; font-size: 0.95rem; transition: 0.3s;
-        }
-        .nav-links a:hover { background-color: var(--light-pink); color: var(--primary); }
 
-        /* --- ESTILOS DEL FORMULARIO --- */
+        .logo-img { height: 70px; width: auto; display: block; transition: 0.3s; }
+        .logo-img:hover { transform: scale(1.05); }
+
+        .nav-links a {
+            padding: 8px 16px; border-radius: 4px; color: var(--text-main);
+            font-weight: 500; font-size: 0.95rem; transition: 0.3s; letter-spacing: 0.5px;
+        }
+        .nav-links a:hover { color: var(--primary); background-color: rgba(201, 124, 93, 0.05); }
+
+        /* --- 4. SECCIÓN DEL FORMULARIO (Estilo Tarjeta) --- */
         .contact-section {
-            max-width: 600px;
+            max-width: 650px;
             margin: 60px auto;
             background: white;
-            padding: 40px;
-            border-radius: 20px;
+            padding: 50px;
+            border-radius: 10px; /* Bordes suaves */
             box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+            border: 1px solid rgba(0,0,0,0.02);
         }
 
-        .section-header { text-align: center; margin-bottom: 30px; }
-        .section-header h1 { font-family: 'Poppins', sans-serif; font-weight: 700; color: var(--primary); margin-bottom: 10px; }
-        .section-header p { color: #666; }
+        .section-header { text-align: center; margin-bottom: 40px; }
+        
+        .section-header h1 { 
+            font-family: 'Playfair Display', serif; /* Título elegante */
+            font-weight: 700; 
+            color: var(--text-main); 
+            font-size: 2.2rem;
+            margin-bottom: 10px; 
+        }
+        
+        .section-header p { color: var(--text-light); font-size: 1.1rem; }
 
-        .form-group { margin-bottom: 20px; }
-        .form-label { display: block; margin-bottom: 8px; font-weight: 600; color: var(--dark); font-size: 0.9rem; }
+        /* Estilos de los Inputs */
+        .form-group { margin-bottom: 25px; }
+        
+        .form-label { 
+            display: block; margin-bottom: 8px; font-weight: 500; 
+            color: var(--text-main); font-size: 0.95rem; 
+        }
         
         .form-input, .form-select, .form-textarea {
             width: 100%;
-            padding: 12px 15px;
-            border: 2px solid #eee;
-            border-radius: 10px;
+            padding: 14px 15px;
+            border: 1px solid #e0e0e0;
+            border-radius: 8px;
             font-family: 'Poppins', sans-serif;
             font-size: 1rem;
+            color: var(--text-main);
             transition: 0.3s;
-            background-color: #fafafa;
+            background-color: #fcfcfc;
         }
 
+        /* Al hacer clic en un campo, se pone terracota */
         .form-input:focus, .form-select:focus, .form-textarea:focus {
             border-color: var(--primary);
             background-color: white;
             outline: none;
+            box-shadow: 0 0 0 3px rgba(201, 124, 93, 0.1);
         }
 
-        .form-textarea { height: 120px; resize: none; }
+        .form-textarea { height: 130px; resize: none; }
 
+        /* Botón de Enviar (Estilo Terracota) */
         .btn-submit {
             width: 100%;
             background: var(--primary);
             color: white;
-            padding: 15px;
+            padding: 16px;
             border: none;
             border-radius: 50px;
             font-size: 1.1rem;
-            font-weight: 700;
+            font-weight: 600;
             cursor: pointer;
             transition: 0.3s;
             margin-top: 10px;
             display: flex; justify-content: center; align-items: center; gap: 10px;
+            box-shadow: 0 4px 15px rgba(201, 124, 93, 0.3);
         }
-        .btn-submit:hover { background: var(--secondary); transform: translateY(-2px); }
+        .btn-submit:hover { background: #b06648; transform: translateY(-2px); }
 
-        /* Footer simple */
-        footer { text-align: center; padding: 40px; color: #888; font-size: 0.9rem; }
+        footer { 
+            text-align: center; padding: 40px; color: var(--text-light); font-size: 0.9rem; margin-top: 40px;
+        }
 
+        /* Responsive */
         @media (max-width: 768px) {
-            .contact-section { margin: 20px; padding: 25px; }
-            header { flex-direction: column; gap: 15px; }
+            .contact-section { margin: 20px; padding: 30px 20px; }
+            header { flex-direction: column; height: auto; gap: 15px; padding: 15px; }
+            .section-header h1 { font-size: 1.8rem; }
         }
     </style>
 </head>
@@ -106,20 +137,20 @@
     <header>
         <div class="logo-container">
             <a href="index.html">
-                <img src="img/logo.png" alt="Logo" class="logo-img">
+                <img src="img/logo.png" alt="Logo El Arte de Pame" class="logo-img">
             </a>
         </div>
         <div class="header-right">
             <nav class="nav-links">
-                <a href="index.html">Volver al Catálogo</a>
+                <a href="index.html">← Volver al Catálogo</a>
             </nav>
         </div>
     </header>
 
     <section class="contact-section">
         <div class="section-header">
-            <h1>Cotiza tu Pedido</h1>
-            <p>Cuéntame qué idea tienes y la hacemos realidad.</p>
+            <h1>Hablemos de tu idea</h1>
+            <p>¿Quieres personalizar una pieza o tienes dudas? Escríbeme y lo creamos juntos.</p>
         </div>
 
         <form id="whatsappForm">
@@ -129,22 +160,22 @@
             </div>
 
             <div class="form-group">
-                <label class="form-label">¿Qué te gustaría pedir?</label>
+                <label class="form-label">¿Qué te gustaría?</label>
                 <select id="tipo" class="form-select">
+                    <option value="Consulta General">Tengo una consulta general</option>
                     <option value="Cuadro de Diamante">Cuadro de Diamante Personalizado</option>
                     <option value="Tarjeta a Mano">Tarjeta Hecha a Mano</option>
                     <option value="Dibujo Artístico">Dibujo / Retrato</option>
-                    <option value="Otro">Otra manualidad</option>
                 </select>
             </div>
 
             <div class="form-group">
-                <label class="form-label">Detalles de tu idea:</label>
-                <textarea id="mensaje" class="form-textarea" placeholder="Ej. Quiero una tarjeta para el aniversario de mis padres, que tenga colores dorados y rosas..." required></textarea>
+                <label class="form-label">Cuéntame los detalles:</label>
+                <textarea id="mensaje" class="form-textarea" placeholder="Ej. Me gustaría un cuadro para el aniversario de mis padres, con tonos dorados..." required></textarea>
             </div>
 
             <button type="submit" class="btn-submit">
-                <span>Enviar a WhatsApp</span>
+                <span>Enviar mensaje a WhatsApp</span>
                 <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" viewBox="0 0 16 16">
                     <path d="M13.601 2.326A7.854 7.854 0 0 0 7.994 0C3.627 0 .068 3.558.064 7.926c0 1.399.366 2.76 1.057 3.965L0 16l4.204-1.102a7.933 7.933 0 0 0 3.79.965h.004c4.368 0 7.926-3.558 7.93-7.93A7.898 7.898 0 0 0 13.6 2.326zM7.994 14.521a6.573 6.573 0 0 1-3.356-.92l-.24-.144-2.494.654.666-2.433-.156-.251a6.56 6.56 0 0 1-1.007-3.505c0-3.626 2.957-6.584 6.591-6.584a6.56 6.56 0 0 1 4.66 1.931 6.557 6.557 0 0 1 1.928 4.66c-.004 3.639-2.961 6.592-6.592 6.592z"/>
                 </svg>
@@ -153,26 +184,27 @@
     </section>
 
     <footer>
-        <p>&copy; 2025 Regalitos Pamela - Sicuani</p>
+        <p>&copy; 2025 El Arte de Pame - Sicuani</p>
     </footer>
 
     <script>
         document.getElementById('whatsappForm').addEventListener('submit', function(e) {
-            e.preventDefault(); // Evita que la página se recargue
+            e.preventDefault(); 
 
             // 1. Capturamos los datos
             var nombre = document.getElementById('nombre').value;
             var tipo = document.getElementById('tipo').value;
             var mensaje = document.getElementById('mensaje').value;
 
-            // 2. Tu número de teléfono (CÁMBIALO AQUÍ)
+            // 2. Tu número (Correcto)
             var telefono = "51984835283"; 
 
-            // 3. Creamos el mensaje
-            var texto = "*Hola Regalitos Pamela, quiero una cotización personalizada.*%0A" +
-                        "%0A👤 *Nombre:* " + nombre +
-                        "%0A🎨 *Interés:* " + tipo +
-                        "%0A📝 *Detalles:* " + mensaje;
+            // 3. Creamos el mensaje con formato bonito
+            var texto = "*Hola Pamela, vengo de tu web.* 👋%0A" +
+                        "Me gustaría hacerte una consulta:%0A%0A" +
+                        "👤 *Nombre:* " + nombre + "%0A" +
+                        "🎨 *Interés:* " + tipo + "%0A" +
+                        "📝 *Mensaje:* " + mensaje;
 
             // 4. Abrimos WhatsApp
             var url = "https://wa.me/" + telefono + "?text=" + texto;
@@ -181,5 +213,4 @@
     </script>
 
 </body>
-</html>
 </html>
